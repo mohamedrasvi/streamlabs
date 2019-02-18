@@ -84,7 +84,9 @@
                     <div class="col-md-3">
                         @isset($data)
                             @foreach($data as $d)
-                                <a href="{{$d->url}}"> <p class="color:b">{{$d->title}}</p> </a>
+                                @isset($d->url)
+                                <a href="{{$d->url}}"> <p>{{$d->title}}</p> </a>
+                                @endisset
                             @endforeach
                         @endisset
                     </div>
@@ -109,7 +111,7 @@
         new Twitch.Embed("twitch-embed", {
             width: 854,
             height: 480,
-            channel: "luzu",
+            channel: '{{$name}}',
             chat : 'default',
         });
     </script>

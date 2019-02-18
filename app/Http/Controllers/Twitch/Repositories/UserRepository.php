@@ -79,16 +79,15 @@ class UserRepository
             if ($userResult->success()) {
                 // Shift result to get single user data
                 $user = $userResult->shift();
-
                 if($method == 'create'){
-                    Streamers::create([
-                        'name' => $user->name,
+                    $insert = Streamers::create([
+                        'name' => $user->login,
                         'twitch_id' => $user->id,
                         'users_id' => $userId,
                     ]);
                 }else{
-                    Streamers::where('users_id', '=',$userId)->update([
-                        'name' => $user->name,
+                    $update = Streamers::where('users_id',$userId)->update([
+                        'name' => $user->login,
                         'twitch_id' => $user->id,
                         'users_id' => $userId,
                     ]);
@@ -127,6 +126,7 @@ class UserRepository
                         }
                         $data[] = $resuls;
                     }
+                    $data[] = $streamer->name;
 
                     return ($data);
                 }

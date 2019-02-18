@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Streamers extends Model
 {
 
+    protected $table = 'streamers';
+
     /**
      * The attributes that are mass assignable.
      *

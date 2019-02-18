@@ -18,7 +18,8 @@ Route::get('login/twitch/callback', 'Twitch\LoginTwitchController@handleProvider
 //home page
 Route::get('home', function () {
     $data = app(App\Http\Controllers\Twitch\Repositories\UserRepository::class)->getVideos();
-    return View('welcome')->with('data',$data);})->middleware('auth');
+    return View('welcome')->with('data',$data)->with('name',end($data));
+})->middleware('auth');
 
 Route::get('logout', function () {
         Auth::logout();
