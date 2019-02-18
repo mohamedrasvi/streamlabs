@@ -68,18 +68,27 @@ class UserRepository
             //check already has one streamer
             $userId = Auth::id();
             $streamer = Streamers::where('users_id', '=',$userId)->first();
-            if(is_null($streamer)) {
-                // Get User by Username
-                $twitch = new Twitch();
-                $userResult = $twitch->getUserByName($request->streamer);
+            $method = null;
+            (is_null($streamer))?$method = 'create':$method = 'update';
 
-                // Check, if the query was successfull
-                if ($userResult->success()) {
-                    // Shift result to get single user data
-                    $user = $userResult->shift();
+            // Get User by Username
+            $twitch = new Twitch();
+            $userResult = $twitch->getUserByName($request->streamer);
 
+            // Check, if the query was successfull
+            if ($userResult->success()) {
+                // Shift result to get single user data
+                $user = $userResult->shift();
+
+                if($method == 'create'){
                     Streamers::create([
-                        'name' => $user->id,
+                        'name' => $user->name,
+                        'twitch_id' => $user->id,
+                        'users_id' => $userId,
+                    ]);
+                }else{
+                    Streamers::where('users_id', '=',$userId)->update([
+                        'name' => $user->name,
                         'twitch_id' => $user->id,
                         'users_id' => $userId,
                     ]);
@@ -111,11 +120,15 @@ class UserRepository
 
                 // Check, if the query was successfull
                 if ($userResult->success()) {
+
                     foreach ($userResult->data as $index => $resuls){
-                        if($index == 10){break;}
+                        if($index == 10){
+                            break;
+                        }
                         $data[] = $resuls;
                     }
-                    return $data;
+
+                    return ($data);
                 }
             }
         } catch (\Exception $e) {
