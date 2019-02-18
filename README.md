@@ -1,7 +1,7 @@
 # streamlabs
 twitch tv web application
 
-#Server requirement 
+# Server requirement 
 PHP >= 7.0.0<br>
 OpenSSL PHP Extension<br>
 PDO PHP Extension<br>
@@ -11,7 +11,7 @@ XML PHP Extension<br>
 MYSQL server 5.5 or above <br>
 Twitch developer account
 
-#Installation guide 
+# Installation guide 
 Clone the repo from git@github.com:mohamedrasvi/streamlabs.git <br>
 Run (Composer install) <br>
 Run this command to copy the .env file (cp -i .env.example .env) <br>
