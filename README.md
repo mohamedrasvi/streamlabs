@@ -21,7 +21,7 @@ You can setup a virtual server or docker or run (php artisan serve
 ) to see the website on browser
 
 # live demo
-Url : http://streamlabs-streamlabs.1d35.starter-us-east-1.openshiftapps.com<br>L
+Url : http://streamlabs-streamlabs.1d35.starter-us-east-1.openshiftapps.com<br>
 How it work (when you click the url it takes you to sign-in page twitch once successfully signed-in it returns back to our live demo)<br>
 You can add or update streamer<br>
 Home page will show your streamer live streaming, chat with latest top ten videos<br>
