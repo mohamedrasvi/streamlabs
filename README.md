@@ -14,7 +14,7 @@ Twitch developer account
 # Installation guide 
 Clone the repo from git@github.com:mohamedrasvi/streamlabs.git <br>
 Run (Composer install) <br>
-Run this command to copy the .env file (cp -i .env.example .env) <br>
+Run this command to copy the .env.example file to .env (cp -i .env.example .env) <br>
 Change your database credentials  and Twitch credentials on .env file <br>
 Run (php artisan migrate)<br>
 You can setup a virtual server or docker or run (php artisan serve
@@ -22,11 +22,11 @@ You can setup a virtual server or docker or run (php artisan serve
 
 # live demo
 Url : http://streamlabs-streamlabs.1d35.starter-us-east-1.openshiftapps.com<br>
-How it work (when you click the url it takes you to sign-in page twitch once successfully signed-in it returns back to our live demo)<br>
+How it works (when you click the url it takes you to Twitch sign-in page once successfully signed-in it returns back to our live demo)<br>
 You can add or update streamer<br>
-Home page will show your streamer live streaming, chat with latest top ten videos<br>
+Home page will show your streamer's live streaming, chat with latest top ten videos<br>
 Please note it is hosted on free Openshift server sometime it goes up and down so always refresh if you get any error message,
-Have used very simple front-end <br>
+have used very simple front-end (css is crappy)<br>
 
 # Architecture diagram deployment and server 
 ![Screenshot](doc/img2.png)<br>
