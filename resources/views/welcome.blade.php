@@ -51,6 +51,16 @@
                 font-size: 84px;
             }
 
+            .links > a {
+                color: #19171c;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -72,10 +82,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
+                        <h2>Latest top ten videos </h2>
                         @isset($data)
                             @foreach($data as $d)
                                 @isset($d->url)
-                                <a href="{{$d->url}}"> <p>{{$d->title}}</p> </a>
+                                <a href="{{$d->url}}"> {{$d->title}} </a><br>
                                 @endisset
                             @endforeach
                         @endisset
