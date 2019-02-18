@@ -30,9 +30,9 @@ Have used very simple front-end <br>
 
 # Architecture diagram deployment and server 
 ![Screenshot](doc/img2.png)<br>
-Please I have uploaded sample image to show how I will deploy to AWS<br>
-I will containerize  the repository and deploy to many nodes 
-I will have a Loadbalance to handle traffic and all (amazon loadbalance does many things)
+Please note I have uploaded the sample image to show MY AWS architecture<br>
+I will containerize  the repository and deploy to many nodes <br>
+I will have a Application Load Balancing to handle traffic and all (Amazon Application Load Balancing does many things)<br>
 
 
 
